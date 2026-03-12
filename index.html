@@ -1,4 +1,4 @@
-<html lang="en" style="scroll-behavior: smooth;"><head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Gentleman's Reference</title>
@@ -6,43 +6,50 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
     <style>
         /* Custom font families setup */
         .font-sans { font-family: 'Inter', sans-serif; }
         .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* Hide scrollbar for nav but allow scrolling */
+        /* Hide scrollbar but allow scrolling */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Subtle scrollbar for item lists */
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E8E6DF; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #B69D74; }
     </style>
 </head>
-<body class="bg-[#F5F4F0] text-[#2C332A] font-sans antialiased selection:bg-[#B69D74] selection:text-white pb-32">
+<body class="bg-[#F5F4F0] text-[#2C332A] font-sans antialiased selection:bg-[#B69D74] selection:text-white h-[100dvh] overflow-hidden flex flex-col">
 
-    <!-- Sticky Navigation -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-[#F5F4F0]/90 backdrop-blur-md border-b border-[#E8E6DF]">
+    <!-- Fixed Navigation -->
+    <header class="flex-none bg-[#F5F4F0]/90 backdrop-blur-md border-b border-[#E8E6DF] z-50">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#home" class="font-serif text-xl tracking-tighter font-medium text-[#1B3B2B]">GR.</a>
+            <a href="#" data-target="home" class="nav-link font-serif text-xl tracking-tighter font-medium text-[#1B3B2B]">GR.</a>
             
             <!-- Desktop & Mobile Scrollable Nav -->
             <nav class="flex-1 ml-8 overflow-x-auto no-scrollbar">
                 <ul class="flex items-center gap-x-8 text-xs tracking-wide uppercase text-[#5A6058]">
-                    <li><a href="#home" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Home</a></li>
-                    <li><a href="#first-dates" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">First Dates</a></li>
-                    <li><a href="#big-dates" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Big Dates</a></li>
-                    <li><a href="#small-gestures" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Small Gestures</a></li>
-                    <li><a href="#basics" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Boyfriend Basics</a></li>
-                    <li><a href="#big-nos" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Big No's</a></li>
+                    <li><button data-target="home" class="nav-link text-[#B69D74] hover:text-[#B69D74] transition-colors whitespace-nowrap py-4 focus:outline-none">Home</button></li>
+                    <li><button data-target="first-dates" class="nav-link hover:text-[#B69D74] transition-colors whitespace-nowrap py-4 focus:outline-none">First Dates</button></li>
+                    <li><button data-target="big-dates" class="nav-link hover:text-[#B69D74] transition-colors whitespace-nowrap py-4 focus:outline-none">Big Dates</button></li>
+                    <li><button data-target="small-gestures" class="nav-link hover:text-[#B69D74] transition-colors whitespace-nowrap py-4 focus:outline-none">Small Gestures</button></li>
+                    <li><button data-target="basics" class="nav-link hover:text-[#B69D74] transition-colors whitespace-nowrap py-4 focus:outline-none">Boyfriend Basics</button></li>
+                    <li><button data-target="big-nos" class="nav-link hover:text-[#B69D74] transition-colors whitespace-nowrap py-4 focus:outline-none">Big No's</button></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 pt-32 space-y-32">
+    <!-- Main Content Area (Fixed height, no page scroll) -->
+    <main class="flex-1 max-w-4xl w-full mx-auto px-6 relative overflow-hidden">
 
         <!-- 1. Home / Intro Section -->
-        <section id="home" class="scroll-mt-32">
+        <section id="home" class="content-section h-full flex flex-col justify-center pb-20 fade-in">
             <div class="space-y-6 max-w-2xl">
                 <p class="text-xs tracking-widest uppercase text-[#B69D74] font-medium">Introduction</p>
                 <h1 class="font-serif text-4xl md:text-5xl tracking-tight font-medium text-[#1B3B2B] leading-tight">
@@ -50,191 +57,292 @@
                     <span class="italic font-normal text-[#B69D74]">Reference Guide</span>
                 </h1>
                 <p class="text-base text-[#5A6058] font-light leading-relaxed">
-                    A curated handbook dedicated to the art of being a stellar partner. In a world of fleeting interactions, this space is reserved for timeless standards, intentional actions, and the enduring class required to navigate romance with grace. Read, reflect, and apply.
+                    A curated handbook dedicated to the art of being a stellar partner. In a world of fleeting interactions, this space is reserved for timeless standards, intentional actions, and the enduring class required to navigate romance with grace. Select a category above to begin.
                 </p>
             </div>
         </section>
 
-        <!-- Divider -->
-        <div class="h-px w-full bg-gradient-to-r from-transparent via-[#E8E6DF] to-transparent"></div>
-
         <!-- 2. First Dates -->
-        <section id="first-dates" class="scroll-mt-32">
-            <header class="mb-10 flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
-                    <iconify-icon icon="solar:cup-linear" width="20"></iconify-icon>
+        <section id="first-dates" class="content-section hidden h-full flex-col pt-10">
+            <!-- Section Header & Search -->
+            <div class="flex-none flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <header class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B] flex-shrink-0">
+                        <iconify-icon icon="solar:cup-linear" width="20"></iconify-icon>
+                    </div>
+                    <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">First Dates</h2>
+                </header>
+                <div class="relative w-full md:w-64 flex-shrink-0">
+                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5A6058]"></iconify-icon>
+                    <input type="text" placeholder="Search entries..." class="search-input w-full bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#B69D74] text-[#2C332A] transition-colors placeholder:text-[#5A6058]/60">
                 </div>
-                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">First Dates</h2>
-            </header>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Add items here by copying this card structure -->
-                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Item Title 1</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        Replace this text with your advice. Focus on low-pressure environments, the importance of listening, and setting a respectful tone for the evening.
-                    </p>
-                </article>
+            <!-- Scrollable List Area -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar pr-2 pb-24 relative mask-image-bottom">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 item-container">
+                    <!-- Items -->
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">The Environment</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            Focus on low-pressure environments. Coffee shops, art galleries, or a walk in the park. Avoid overly loud spaces where conversation becomes a shouting match.
+                        </p>
+                    </article>
 
-                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Item Title 2</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        Replace this text with your advice. Dress codes, punctuality, and the art of conversation without interrogation.
-                    </p>
-                </article>
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Dress Code</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            Always dress one degree sharper than the venue requires. It shows respect for the occasion and your date. Clean shoes are non-negotiable.
+                        </p>
+                    </article>
+                    
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Punctuality</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            To be early is to be on time. Arrive 10 minutes beforehand. It affords you time to get comfortable and ensures she never has to wait.
+                        </p>
+                    </article>
+
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Conversation Flow</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            Ask open-ended questions. Treat the interaction like a gentle rally in tennis, not an interrogation. Silence is okay; let it breathe.
+                        </p>
+                    </article>
+
+                    <!-- Add 50+ items here -->
+                     <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">The Bill</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            Discreetly handle the bill without making a production of it. If she insists on splitting, graciously accept or suggest she gets the next one.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- 3. Big Dates -->
-        <section id="big-dates" class="scroll-mt-32">
-            <header class="mb-10 flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
-                    <iconify-icon icon="solar:stars-linear" width="20"></iconify-icon>
+        <section id="big-dates" class="content-section hidden h-full flex-col pt-10">
+            <div class="flex-none flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <header class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B] flex-shrink-0">
+                        <iconify-icon icon="solar:stars-linear" width="20"></iconify-icon>
+                    </div>
+                    <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Big Dates</h2>
+                </header>
+                <div class="relative w-full md:w-64 flex-shrink-0">
+                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5A6058]"></iconify-icon>
+                    <input type="text" placeholder="Search big dates..." class="search-input w-full bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#B69D74] text-[#2C332A] transition-colors placeholder:text-[#5A6058]/60">
                 </div>
-                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Big Dates</h2>
-            </header>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Add items here by copying this card structure -->
-                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Anniversaries</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        Details on planning milestones. Reservations well in advance, coordinated attire, and ensuring the focus remains entirely on celebrating your partner.
-                    </p>
-                </article>
+            <div class="flex-1 overflow-y-auto custom-scrollbar pr-2 pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 item-container">
+                    <!-- Items -->
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Anniversaries</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            Details on planning milestones. Reservations well in advance, coordinated attire, and ensuring the focus remains entirely on celebrating your partner.
+                        </p>
+                    </article>
 
-                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Special Occasions</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        Birthdays, promotions, or life events. How to elevate a standard evening into an unforgettable experience through meticulous preparation.
-                    </p>
-                </article>
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Birthdays</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            It's their day, not yours. Plan the itinerary around their favorite things, no matter how trivial they seem to you.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- 4. Small Gestures / Day Activities -->
-        <section id="small-gestures" class="scroll-mt-32">
-            <header class="mb-10 flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
-                    <iconify-icon icon="solar:sun-2-linear" width="20"></iconify-icon>
+        <!-- 4. Small Gestures -->
+        <section id="small-gestures" class="content-section hidden h-full flex-col pt-10">
+            <div class="flex-none flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <header class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B] flex-shrink-0">
+                        <iconify-icon icon="solar:sun-2-linear" width="20"></iconify-icon>
+                    </div>
+                    <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Small Gestures</h2>
+                </header>
+                <div class="relative w-full md:w-64 flex-shrink-0">
+                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5A6058]"></iconify-icon>
+                    <input type="text" placeholder="Search gestures..." class="search-input w-full bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#B69D74] text-[#2C332A] transition-colors placeholder:text-[#5A6058]/60">
                 </div>
-                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Small Gestures &amp; Day Activities</h2>
-            </header>
+            </div>
             
-            <div class="grid grid-cols-1 gap-4">
-                <!-- List style for smaller items -->
-                <div class="flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
-                    <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
-                    <div>
-                        <h4 class="font-serif text-base text-[#1B3B2B] mb-1">The Morning Coffee</h4>
-                        <p class="text-sm text-[#5A6058] font-light">Having their preferred coffee ready before they ask. It shows attentiveness to daily routines.</p>
+            <div class="flex-1 overflow-y-auto custom-scrollbar pr-2 pb-24">
+                <div class="grid grid-cols-1 gap-4 item-container">
+                    <div class="searchable-item flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
+                        <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
+                        <div>
+                            <h4 class="item-title font-serif text-base text-[#1B3B2B] mb-1">The Morning Coffee</h4>
+                            <p class="item-desc text-sm text-[#5A6058] font-light">Having their preferred coffee ready before they ask. It shows attentiveness to daily routines.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
-                    <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
-                    <div>
-                        <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Unexpected Notes</h4>
-                        <p class="text-sm text-[#5A6058] font-light">A brief, handwritten note left on the mirror or in a bag. Physical words carry lasting weight.</p>
-                    </div>
-                </div>
-
-                 <div class="flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
-                    <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
-                    <div>
-                        <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Add your gesture here</h4>
-                        <p class="text-sm text-[#5A6058] font-light">Description of the day activity or small gesture.</p>
+                    <div class="searchable-item flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
+                        <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
+                        <div>
+                            <h4 class="item-title font-serif text-base text-[#1B3B2B] mb-1">Unexpected Notes</h4>
+                            <p class="item-desc text-sm text-[#5A6058] font-light">A brief, handwritten note left on the mirror or in a bag. Physical words carry lasting weight.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 5. Boyfriend Basics -->
-        <section id="basics" class="scroll-mt-32">
-            <header class="mb-10 flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
-                    <iconify-icon icon="solar:book-linear" width="20"></iconify-icon>
+        <section id="basics" class="content-section hidden h-full flex-col pt-10">
+            <div class="flex-none flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <header class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B] flex-shrink-0">
+                        <iconify-icon icon="solar:book-linear" width="20"></iconify-icon>
+                    </div>
+                    <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Boyfriend Basics</h2>
+                </header>
+                <div class="relative w-full md:w-64 flex-shrink-0">
+                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5A6058]"></iconify-icon>
+                    <input type="text" placeholder="Search basics..." class="search-input w-full bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#B69D74] text-[#2C332A] transition-colors placeholder:text-[#5A6058]/60">
                 </div>
-                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Boyfriend Basics</h2>
-            </header>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Active Listening</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        To hear is physical; to listen is intentional. Put distractions away and engage fully when she speaks.
-                    </p>
-                </article>
+            <div class="flex-1 overflow-y-auto custom-scrollbar pr-2 pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 item-container">
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Active Listening</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            To hear is physical; to listen is intentional. Put distractions away and engage fully when she speaks.
+                        </p>
+                    </article>
 
-                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Consistency</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        Grand gestures mean little without daily reliability. Be someone whose word is as solid as oak.
-                    </p>
-                </article>
-
-                 <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Add basic here</h3>
-                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
-                        Description of the foundational trait.
-                    </p>
-                </article>
+                    <article class="searchable-item bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="item-title font-serif text-lg text-[#1B3B2B] mb-3">Consistency</h3>
+                        <p class="item-desc text-sm text-[#5A6058] font-light leading-relaxed">
+                            Grand gestures mean little without daily reliability. Be someone whose word is as solid as oak.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- 6. Big No's -->
-        <section id="big-nos" class="scroll-mt-32">
-            <header class="mb-10 flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
-                    <iconify-icon icon="solar:close-circle-linear" width="20"></iconify-icon>
+        <section id="big-nos" class="content-section hidden h-full flex-col pt-10">
+            <div class="flex-none flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <header class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B] flex-shrink-0">
+                        <iconify-icon icon="solar:close-circle-linear" width="20"></iconify-icon>
+                    </div>
+                    <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">The Big No's</h2>
+                </header>
+                <div class="relative w-full md:w-64 flex-shrink-0">
+                    <iconify-icon icon="solar:magnifer-linear" class="absolute left-3 top-1/2 -translate-y-1/2 text-[#5A6058]"></iconify-icon>
+                    <input type="text" placeholder="Search big no's..." class="search-input w-full bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#B69D74] text-[#2C332A] transition-colors placeholder:text-[#5A6058]/60">
                 </div>
-                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">The Big No's</h2>
-            </header>
+            </div>
             
-            <div class="bg-white border border-[#E8E6DF] rounded-sm p-8">
-                <p class="text-sm text-[#5A6058] font-light mb-8 italic">
-                    Certain behaviors are fundamentally incompatible with the title of gentleman. Avoid these at all costs.
-                </p>
-                
-                <ul class="space-y-6">
-                    <!-- List Item -->
-                    <li class="flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
-                        <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">I.</span>
-                        <div>
-                            <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Phones at the Table</h4>
-                            <p class="text-sm text-[#5A6058] font-light">Unless expecting an emergency, the device remains out of sight. Your immediate company takes absolute precedence.</p>
-                        </div>
-                    </li>
+            <div class="flex-1 overflow-y-auto custom-scrollbar pr-2 pb-24">
+                <div class="bg-white border border-[#E8E6DF] rounded-sm p-8">
+                    <p class="text-sm text-[#5A6058] font-light mb-8 italic">
+                        Certain behaviors are fundamentally incompatible with the title of gentleman. Avoid these at all costs.
+                    </p>
+                    
+                    <ul class="space-y-6 item-container">
+                        <li class="searchable-item flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
+                            <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">I.</span>
+                            <div>
+                                <h4 class="item-title font-serif text-base text-[#1B3B2B] mb-1">Phones at the Table</h4>
+                                <p class="item-desc text-sm text-[#5A6058] font-light">Unless expecting an emergency, the device remains out of sight. Your immediate company takes absolute precedence.</p>
+                            </div>
+                        </li>
 
-                    <!-- List Item -->
-                    <li class="flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
-                        <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">II.</span>
-                        <div>
-                            <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Public Disrespect</h4>
-                            <p class="text-sm text-[#5A6058] font-light">Disagreements are inevitable, but they belong behind closed doors. Never belittle or correct your partner sharply in front of others.</p>
-                        </div>
-                    </li>
-
-                     <!-- List Item -->
-                     <li class="flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
-                        <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">III.</span>
-                        <div>
-                            <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Add rule here</h4>
-                            <p class="text-sm text-[#5A6058] font-light">Explanation of why this behavior is unacceptable.</p>
-                        </div>
-                    </li>
-                </ul>
+                        <li class="searchable-item flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
+                            <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">II.</span>
+                            <div>
+                                <h4 class="item-title font-serif text-base text-[#1B3B2B] mb-1">Public Disrespect</h4>
+                                <p class="item-desc text-sm text-[#5A6058] font-light">Disagreements are inevitable, but they belong behind closed doors. Never belittle or correct your partner sharply in front of others.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
     </main>
 
+    <!-- App Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+            const searchInputs = document.querySelectorAll('.search-input');
+
+            // 1. Navigation & Collapsing Logic
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    
+                    // Update active nav styling
+                    document.querySelectorAll('nav .nav-link').forEach(l => {
+                        l.classList.remove('text-[#B69D74]');
+                    });
+                    
+                    // If clicked from main nav, highlight it
+                    if(link.closest('nav')) {
+                        link.classList.add('text-[#B69D74]');
+                    }
+
+                    // Hide all sections, show the clicked one
+                    sections.forEach(sec => {
+                        if(sec.id === targetId) {
+                            sec.classList.remove('hidden');
+                            sec.classList.add('flex'); // Maintain flex column layout for inner scrolling
+                            
+                            // Reset search when opening tab
+                            const searchInput = sec.querySelector('.search-input');
+                            if(searchInput) {
+                                searchInput.value = '';
+                                searchInput.dispatchEvent(new Event('input'));
+                            }
+                        } else {
+                            sec.classList.add('hidden');
+                            sec.classList.remove('flex');
+                        }
+                    });
+                });
+            });
+
+            // 2. Search Logic
+            searchInputs.forEach(input => {
+                input.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const section = e.target.closest('.content-section');
+                    const items = section.querySelectorAll('.searchable-item');
+
+                    items.forEach(item => {
+                        const title = item.querySelector('.item-title')?.textContent.toLowerCase() || '';
+                        const desc = item.querySelector('.item-desc')?.textContent.toLowerCase() || '';
+                        
+                        // Show/Hide based on keyword match
+                        if(title.includes(searchTerm) || desc.includes(searchTerm)) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body></html>
