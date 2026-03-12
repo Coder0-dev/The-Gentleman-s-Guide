@@ -1,0 +1,240 @@
+<html lang="en" style="scroll-behavior: smooth;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gentleman's Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Custom font families setup */
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Hide scrollbar for nav but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#F5F4F0] text-[#2C332A] font-sans antialiased selection:bg-[#B69D74] selection:text-white pb-32">
+
+    <!-- Sticky Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-[#F5F4F0]/90 backdrop-blur-md border-b border-[#E8E6DF]">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="font-serif text-xl tracking-tighter font-medium text-[#1B3B2B]">GR.</a>
+            
+            <!-- Desktop & Mobile Scrollable Nav -->
+            <nav class="flex-1 ml-8 overflow-x-auto no-scrollbar">
+                <ul class="flex items-center gap-x-8 text-xs tracking-wide uppercase text-[#5A6058]">
+                    <li><a href="#home" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Home</a></li>
+                    <li><a href="#first-dates" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">First Dates</a></li>
+                    <li><a href="#big-dates" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Big Dates</a></li>
+                    <li><a href="#small-gestures" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Small Gestures</a></li>
+                    <li><a href="#basics" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Boyfriend Basics</a></li>
+                    <li><a href="#big-nos" class="hover:text-[#B69D74] transition-colors whitespace-nowrap py-4">Big No's</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 pt-32 space-y-32">
+
+        <!-- 1. Home / Intro Section -->
+        <section id="home" class="scroll-mt-32">
+            <div class="space-y-6 max-w-2xl">
+                <p class="text-xs tracking-widest uppercase text-[#B69D74] font-medium">Introduction</p>
+                <h1 class="font-serif text-4xl md:text-5xl tracking-tight font-medium text-[#1B3B2B] leading-tight">
+                    The Gentleman's <br>
+                    <span class="italic font-normal text-[#B69D74]">Reference Guide</span>
+                </h1>
+                <p class="text-base text-[#5A6058] font-light leading-relaxed">
+                    A curated handbook dedicated to the art of being a stellar partner. In a world of fleeting interactions, this space is reserved for timeless standards, intentional actions, and the enduring class required to navigate romance with grace. Read, reflect, and apply.
+                </p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-[#E8E6DF] to-transparent"></div>
+
+        <!-- 2. First Dates -->
+        <section id="first-dates" class="scroll-mt-32">
+            <header class="mb-10 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
+                    <iconify-icon icon="solar:cup-linear" width="20"></iconify-icon>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">First Dates</h2>
+            </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Add items here by copying this card structure -->
+                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Item Title 1</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        Replace this text with your advice. Focus on low-pressure environments, the importance of listening, and setting a respectful tone for the evening.
+                    </p>
+                </article>
+
+                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Item Title 2</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        Replace this text with your advice. Dress codes, punctuality, and the art of conversation without interrogation.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Big Dates -->
+        <section id="big-dates" class="scroll-mt-32">
+            <header class="mb-10 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
+                    <iconify-icon icon="solar:stars-linear" width="20"></iconify-icon>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Big Dates</h2>
+            </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Add items here by copying this card structure -->
+                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Anniversaries</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        Details on planning milestones. Reservations well in advance, coordinated attire, and ensuring the focus remains entirely on celebrating your partner.
+                    </p>
+                </article>
+
+                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Special Occasions</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        Birthdays, promotions, or life events. How to elevate a standard evening into an unforgettable experience through meticulous preparation.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Small Gestures / Day Activities -->
+        <section id="small-gestures" class="scroll-mt-32">
+            <header class="mb-10 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
+                    <iconify-icon icon="solar:sun-2-linear" width="20"></iconify-icon>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Small Gestures &amp; Day Activities</h2>
+            </header>
+            
+            <div class="grid grid-cols-1 gap-4">
+                <!-- List style for smaller items -->
+                <div class="flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
+                    <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
+                    <div>
+                        <h4 class="font-serif text-base text-[#1B3B2B] mb-1">The Morning Coffee</h4>
+                        <p class="text-sm text-[#5A6058] font-light">Having their preferred coffee ready before they ask. It shows attentiveness to daily routines.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
+                    <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
+                    <div>
+                        <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Unexpected Notes</h4>
+                        <p class="text-sm text-[#5A6058] font-light">A brief, handwritten note left on the mirror or in a bag. Physical words carry lasting weight.</p>
+                    </div>
+                </div>
+
+                 <div class="flex items-start gap-4 p-6 bg-[#FAFAF8] border border-[#E8E6DF] rounded-sm hover:bg-white transition-colors">
+                    <iconify-icon icon="solar:check-circle-linear" width="24" class="text-[#B69D74] flex-shrink-0 mt-0.5"></iconify-icon>
+                    <div>
+                        <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Add your gesture here</h4>
+                        <p class="text-sm text-[#5A6058] font-light">Description of the day activity or small gesture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Boyfriend Basics -->
+        <section id="basics" class="scroll-mt-32">
+            <header class="mb-10 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
+                    <iconify-icon icon="solar:book-linear" width="20"></iconify-icon>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">Boyfriend Basics</h2>
+            </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Active Listening</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        To hear is physical; to listen is intentional. Put distractions away and engage fully when she speaks.
+                    </p>
+                </article>
+
+                <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Consistency</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        Grand gestures mean little without daily reliability. Be someone whose word is as solid as oak.
+                    </p>
+                </article>
+
+                 <article class="bg-[#FAFAF8] border border-[#E8E6DF] p-8 rounded-sm hover:border-[#B69D74]/50 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-[#B69D74] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="font-serif text-lg text-[#1B3B2B] mb-3">Add basic here</h3>
+                    <p class="text-sm text-[#5A6058] font-light leading-relaxed">
+                        Description of the foundational trait.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 6. Big No's -->
+        <section id="big-nos" class="scroll-mt-32">
+            <header class="mb-10 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#FAFAF8] border border-[#E8E6DF] flex items-center justify-center text-[#1B3B2B]">
+                    <iconify-icon icon="solar:close-circle-linear" width="20"></iconify-icon>
+                </div>
+                <h2 class="font-serif text-2xl md:text-3xl tracking-tight font-medium text-[#1B3B2B]">The Big No's</h2>
+            </header>
+            
+            <div class="bg-white border border-[#E8E6DF] rounded-sm p-8">
+                <p class="text-sm text-[#5A6058] font-light mb-8 italic">
+                    Certain behaviors are fundamentally incompatible with the title of gentleman. Avoid these at all costs.
+                </p>
+                
+                <ul class="space-y-6">
+                    <!-- List Item -->
+                    <li class="flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
+                        <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">I.</span>
+                        <div>
+                            <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Phones at the Table</h4>
+                            <p class="text-sm text-[#5A6058] font-light">Unless expecting an emergency, the device remains out of sight. Your immediate company takes absolute precedence.</p>
+                        </div>
+                    </li>
+
+                    <!-- List Item -->
+                    <li class="flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
+                        <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">II.</span>
+                        <div>
+                            <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Public Disrespect</h4>
+                            <p class="text-sm text-[#5A6058] font-light">Disagreements are inevitable, but they belong behind closed doors. Never belittle or correct your partner sharply in front of others.</p>
+                        </div>
+                    </li>
+
+                     <!-- List Item -->
+                     <li class="flex items-start gap-4 pb-6 border-b border-[#E8E6DF]/50 last:border-0 last:pb-0">
+                        <span class="font-serif text-[#B69D74] text-lg font-normal leading-none mt-0.5">III.</span>
+                        <div>
+                            <h4 class="font-serif text-base text-[#1B3B2B] mb-1">Add rule here</h4>
+                            <p class="text-sm text-[#5A6058] font-light">Explanation of why this behavior is unacceptable.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+
+</body></html>
